@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import Top from '../../shared/ui/header-top/top.vue';
-import Main from '../../shared/ui/header-main/main.vue';
+import Top from './components/top.vue';
+import Main from './components/main.vue';
 </script>
 
 <style lang="scss">

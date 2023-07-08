@@ -13,10 +13,10 @@
 </template>
 
 <script setup lang="ts">
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import '@splidejs/vue-splide/css';
+import '@splidejs/vue-splide/css/skyblue';
+import '@splidejs/vue-splide/css/sea-green';
+import '@splidejs/vue-splide/css/core';
 import './styles/style.min.css';
 import Header from '../widgets/Header/index.vue';
 import Layout from './layout/Layout.vue';

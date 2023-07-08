@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import Navbar from '../navbar/nav.vue';
-import Modal from '../popup/modal.vue';
+import Navbar from '../../../shared/ui/navbar/nav.vue';
+import Modal from '../../../shared/ui/popup/modal.vue';
 import { useHeaderMain } from '../../../store/headermain';
 import { useUserStore } from '../../../store/user';
+import Search from '../../../shared/ui/popup/search.vue';
 const user = useUserStore();
 const store = useHeaderMain();
 
@@ -13,7 +14,7 @@ const store = useHeaderMain();
     <div class="header__main_container">
       <a href="/" class="header__main_logo">MEIN MINER</a>
       <div class="header__main_nav">
-        <Navbar />
+        <Navbar :toggleClassName="store.menuShow" />
         <button class="header__main_order btn-order">Заказать звонок</button>
       </div>
       <div class="header__main_actions action">
@@ -42,26 +43,12 @@ const store = useHeaderMain();
     <div v-if="store.modalShow">
       <h1>Modal</h1>
     </div>
-    <div v-else-if="store.searchBar" class="search-bar">
-      <h1>SearchBar</h1>
-      <input type="text" class="search-input" v-model="store.search" @keypress.enter="store.searching"/>
-    </div>
+    <Search v-else-if="store.searchBar" :search="store.search" :searching="store.searching"/>
   </Modal>
 </template>
 
 <style lang="scss" scoped>
 .action__search{
   position: relative;
-}
-.search-bar{
-  text-align: center;
-}
-.search-input {
-  border-radius: 1rem;
-  outline: none;
-  border: solid 1px #000;
-  font-size: 1rem;
-  padding: .7rem 2rem;
-  
 }
 </style>

@@ -13,6 +13,3 @@ import product from './components/product.vue';
       </div>
   </div>
 </section></template>
-
-
-<style lang="scss"></style>
